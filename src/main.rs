@@ -1,10 +1,9 @@
 mod modules;
-use modules::{rngmatrix, printmatrix};
+use modules::{rngmatrix, printmatrix, sizeq};
 
 #[allow(non_snake_case)]
 fn main() {
-    let row = 6;
-    let col = 6;
+    let (row,col) = sizeq();
     
     let A = rngmatrix(row, col);
     

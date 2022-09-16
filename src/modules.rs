@@ -1,3 +1,5 @@
+use std::io;
+
 use rand::{self, thread_rng, Rng};
 use matrix::prelude::*;
 
@@ -37,4 +39,37 @@ pub fn printmatrix(matx:&matrix::format::Compressed<i32>,row:usize,col:usize) {
         println!();
     } 
     println!();
+}
+
+//Requests a size
+
+pub fn sizeq() -> (usize, usize){
+
+    let mut row = String::new();
+    let mut col = String::new();
+
+    println!("Please choose the height of the matrix");
+
+        io::stdin()
+        .read_line(&mut row)
+        .expect("Failed to read line");
+    
+    println!("Please choose the width of the matrix");
+        
+        io::stdin()
+        .read_line(&mut col)
+        .expect("Failed to read line");
+
+
+    let row = match row.trim().parse() {
+        Ok(n) => n,
+        Err(_) => 2,
+    };
+
+    let col = match col.trim().parse() {
+        Ok(n) => n,
+        Err(_) => 2,
+    };
+
+    return (row,col)
 }
