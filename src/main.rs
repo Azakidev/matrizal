@@ -1,20 +1,18 @@
 mod operations;
 mod modules;
-use matrix::{prelude::Compressed, Matrix};
 
 #[allow(unused_imports)]
+use matrix::{prelude::Compressed, Matrix};
+#[allow(unused_imports)]
 use operations::*;
+#[allow(unused_imports)]
 use modules::*;
 
 #[allow(non_snake_case)]
 fn main() {
 
-    let matx = Compressed::zero(3);
-    let row = 3;
-    let col = 3;
-    //let det = 0;
-    let matx = rngmatrix(row, col, matx);
-    
+    let (matx,row,col) = newmatx();
+    let (matx,row,col) = transmatx(matx, row, col);
     printmatx(&matx,row,col);
 
 }
