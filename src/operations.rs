@@ -1,6 +1,6 @@
 use matrix::prelude::*;
 
-use crate::modules::{newmatx, printmatrix, oppmatrix};
+use crate::modules::*;
 
 pub fn matxsum ()  {
     
@@ -23,7 +23,7 @@ pub fn matxsum ()  {
         println!("The matrixes don't match! Returning 0mxn");
     }
 
-    printmatrix(&c, m, n)
+    printmatx(&c, m, n)
 }
 
 pub fn matxsub () {
@@ -48,5 +48,22 @@ pub fn matxsub () {
         println!("The matrixes don't match! Returning 0mxn");
     }
 
-    printmatrix(&c, m, n)
+    printmatx(&c, m, n)
+}
+
+//Opposite of a matrix
+
+pub fn oppmatrix(mut matx:matrix::format::Compressed<i32>,row:usize,col:usize) -> matrix::format::Compressed<i32> {
+    let m = row;
+    let n = col;
+
+    for a in 0..m {
+        
+        for i in 0..n {
+
+            matx.set((a,i), matx.get((a,i)) * -1);
+        }
+        
+    } 
+    return matx
 }

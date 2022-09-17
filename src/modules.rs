@@ -132,34 +132,37 @@ pub fn sizeq() -> (usize, usize){
 
 //Prints matrix
 
-pub fn printmatrix(matx:&matrix::format::Compressed<i32>,row:usize,col:usize) {
+pub fn printmatx(matx:&matrix::format::Compressed<i32>,row:usize,col:usize) {
     let m = row;
     let n = col;
 
     for a in 0..m {
-        
+        print!("(");
         for i in 0..n {
 
-            print!("{} ", &matx.get((a,i)))
+            print!("{}  ", &matx.get((a,i)))
         }
+        print!(")");
         println!();
     } 
     println!();
 }
 
-//Opposite of a matrix
+//Prints determinant
 
-pub fn oppmatrix(mut matx:matrix::format::Compressed<i32>,row:usize,col:usize) -> matrix::format::Compressed<i32> {
+pub fn printdet(matx:&matrix::format::Compressed<i32>,row:usize,col:usize,det:i32) {
     let m = row;
     let n = col;
 
     for a in 0..m {
-        
+        print!("|");
         for i in 0..n {
 
-            matx.set((a,i), matx.get((a,i)) * -1);
+            print!("{}  ", &matx.get((a,i)))
         }
-        
+        print!("|");
+        println!();
     } 
-    return matx
+    println!();
+    println!("The determinant is {}",det);
 }
