@@ -11,6 +11,6 @@ use modules::*;
 #[allow(non_snake_case)]
 fn main() {
 
-    multmatrix();
+    determatrix()
 
 }

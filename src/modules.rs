@@ -221,3 +221,22 @@ pub fn esc_mult_matx (mut matx:matrix::format::Compressed<i32>,m:usize,n:usize,k
     } 
     return (matx, m, n);
 }
+
+
+//Determinants
+
+pub fn detcalc (matx:&matrix::format::Compressed<i32>,s:usize) -> i32 {
+
+    match s {
+        2 => return matx.get((0,0))*matx.get((1,1))- matx.get((0,1))*matx.get((1,0)),
+        
+        3 => return matx.get((0,0))*matx.get((1,1))*matx.get((2,2))
+                    +matx.get((0,1))*matx.get((1,2))*matx.get((2,0))
+                    +matx.get((0,2))*matx.get((1,0))*matx.get((2,1))
+                    -matx.get((0,2))*matx.get((1,1))*matx.get((2,0))
+                    -matx.get((0,0))*matx.get((1,2))*matx.get((2,1))
+                    -matx.get((0,1))*matx.get((1,0))*matx.get((2,2))
+                    ,
+        _ => {println!("Unimplemented!"); return 0;},
+    };
+}

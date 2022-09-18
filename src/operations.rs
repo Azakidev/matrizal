@@ -127,3 +127,12 @@ pub fn multmatrix () {
         println!("These matrixes cannot be multiplied (A's colums do not match B's colums)")
     }
 }
+
+//Determinant calculation
+
+pub fn determatrix () {
+    let (a,s,m) = newmatx();
+
+    let d = detcalc(&a, s);
+    printdet(&a, s, m, d)
+}
