@@ -185,3 +185,25 @@ pub fn transmatx (matx:matrix::format::Compressed<i32>,row:usize,col:usize) -> (
     return (matx_t,m,n)
 
 }
+
+//Creates identity matrix
+
+pub fn idmatx (s:usize) -> (matrix::format::Compressed<i32>,usize,usize) {
+
+    let m = s;
+    let n = s;
+    let mut matx = Compressed::zero((m,m));
+
+    for a in 0..m {
+        
+        for i in 0..n {
+            if a == i {
+                matx.set((a,i), 1);
+            } else {
+                matx.set((a,i), 0)
+            }
+        }
+    } 
+    return (matx,m,n)
+
+}

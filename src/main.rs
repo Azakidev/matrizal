@@ -11,8 +11,7 @@ use modules::*;
 #[allow(non_snake_case)]
 fn main() {
 
-    let (matx,row,col) = newmatx();
-    let (matx,row,col) = transmatx(matx, row, col);
+    let (matx,row,col) = idmatx(3);
     printmatx(&matx,row,col);
 
 }
