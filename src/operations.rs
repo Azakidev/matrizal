@@ -1,4 +1,4 @@
-use std::io::{stdin, self};
+use std::io;
 
 use matrix::prelude::*;
 
@@ -73,7 +73,7 @@ pub fn oppmatrix(mut matx:matrix::format::Compressed<i32>,row:usize,col:usize) -
 //Matrix multiplied by escalar
 
 pub fn escmatrix () {
-    let (mut matx,m,n) = newmatx();                             //Declaration
+    let (matx,m,n) = newmatx();                             //Declaration
 
 
     println!("Choose the factor you wanna multiply the matrix by");                             //Query
@@ -90,7 +90,40 @@ pub fn escmatrix () {
     };
     
 
-    let (matx, m, n) = esc_mult_matrix(matx, m, n, k);          //Operation
+    let (matx, m, n) = esc_mult_matx(matx, m, n, k);          //Operation
 
     printmatx(&matx, m, n);
+}
+
+
+//Matrix multiplication
+
+pub fn multmatrix () {
+    //Make matrixes
+    let (a,m,n) = newmatx();
+    let (b,j,k) = newmatx();
+    let mut c = Compressed::zero((m,k));
+
+    //Check if it's possible and make result matrix
+    if n == j {
+        
+        if m == k && j == k {
+          for o in 0..m {
+            for p in 0..k {
+                let mut sum = 0;
+                for z in 0..m {
+                    sum = sum + a.get((o,z)) * b.get((z,p));
+                }
+                c.set((o,p),sum);
+            }
+            }
+
+            println!("Matrixes to sum (A*B)"); println!();
+            printmatx(&a, m, n); println!(); printmatx(&b, j, k);
+            println!(); println!("C = A*B ="); println!();
+            printmatx(&c, m, k);
+        } else {println!("Matrixes aren't square! (Current limitation)")}
+    } else {
+        println!("These matrixes cannot be multiplied (A's colums do not match B's colums)")
+    }
 }

@@ -50,11 +50,11 @@ pub fn spmatrix (mut matx:matrix::format::Compressed<i32>, row:usize, col:usize)
     let n = col;
 
     for a in 0..m {
-        
+
         for i in 0..n {
             
             let mut num = String::new();
-
+            
             io::stdin()
             .read_line(&mut num)
             .expect("Failed to read line");
@@ -65,7 +65,7 @@ pub fn spmatrix (mut matx:matrix::format::Compressed<i32>, row:usize, col:usize)
             };
             
             matx.set((a,i), num);
-            println!("Next");
+
         }
     } 
 
@@ -210,7 +210,7 @@ pub fn idmatx (s:usize) -> (matrix::format::Compressed<i32>,usize,usize) {
 
 //Escalate specific matrix, just in case
 
-pub fn esc_mult_matrix (mut matx:matrix::format::Compressed<i32>,m:usize,n:usize,k:i32) -> (matrix::format::Compressed<i32>,usize,usize) {
+pub fn esc_mult_matx (mut matx:matrix::format::Compressed<i32>,m:usize,n:usize,k:i32) -> (matrix::format::Compressed<i32>,usize,usize) {
 
     for a in 0..m {
         
