@@ -11,7 +11,6 @@ use modules::*;
 #[allow(non_snake_case)]
 fn main() {
 
-    let (matx,row,col) = idmatx(3);
-    printmatx(&matx,row,col);
+    escmatrix();
 
 }

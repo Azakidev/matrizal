@@ -137,7 +137,7 @@ pub fn printmatx(matx:&matrix::format::Compressed<i32>,row:usize,col:usize) {
     let n = col;
 
     for a in 0..m {
-        print!("(");
+        print!("( ");
         for i in 0..n {
 
             print!("{}  ", &matx.get((a,i)))
@@ -155,7 +155,7 @@ pub fn printdet(matx:&matrix::format::Compressed<i32>,row:usize,col:usize,det:i3
     let n = col;
 
     for a in 0..m {
-        print!("|");
+        print!("| ");
         for i in 0..n {
 
             print!("{}  ", &matx.get((a,i)))
@@ -206,4 +206,18 @@ pub fn idmatx (s:usize) -> (matrix::format::Compressed<i32>,usize,usize) {
     } 
     return (matx,m,n)
 
+}
+
+//Escalate specific matrix, just in case
+
+pub fn esc_mult_matrix (mut matx:matrix::format::Compressed<i32>,m:usize,n:usize,k:i32) -> (matrix::format::Compressed<i32>,usize,usize) {
+
+    for a in 0..m {
+        
+        for i in 0..n {
+
+            matx.set((a,i), matx.get((a,i)) * k);
+        }
+    } 
+    return (matx, m, n);
 }

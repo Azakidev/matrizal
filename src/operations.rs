@@ -1,3 +1,5 @@
+use std::io::{stdin, self};
+
 use matrix::prelude::*;
 
 use crate::modules::*;
@@ -66,4 +68,29 @@ pub fn oppmatrix(mut matx:matrix::format::Compressed<i32>,row:usize,col:usize) -
         
     } 
     return matx
+}
+
+//Matrix multiplied by escalar
+
+pub fn escmatrix () {
+    let (mut matx,m,n) = newmatx();                             //Declaration
+
+
+    println!("Choose the factor you wanna multiply the matrix by");                             //Query
+
+    let mut k = String::new();
+
+        io::stdin()
+        .read_line(&mut k)
+        .expect("Failed to read line");
+
+    let k = match k.trim().parse() {
+        Ok(k) => k,
+        Err(_) => {println!("Incorrect input, using 1");1},
+    };
+    
+
+    let (matx, m, n) = esc_mult_matrix(matx, m, n, k);          //Operation
+
+    printmatx(&matx, m, n);
 }
