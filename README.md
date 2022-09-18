@@ -5,7 +5,7 @@ A command line program to help me do linear algebra homework 👍
 
 ### Binary, any OS
 
-For a binary file just use `cargo run`
+For a binary file just use `cargo run`, make sure you have rust installed
 
 ## Installs
 
