@@ -237,6 +237,6 @@ pub fn detcalc (matx:&matrix::format::Compressed<i32>,s:usize) -> i32 {
                     -matx.get((0,0))*matx.get((1,2))*matx.get((2,1))
                     -matx.get((0,1))*matx.get((1,0))*matx.get((2,2))
                     ,
-        _ => {println!("Unimplemented!"); return 0;},
+        _ => {println!("Unsupported size!"); return 0;},
     };
 }

@@ -1,10 +1,25 @@
 [package]
+
 name = "matrizal"
+description = "A matrix calculator cli to do my homework"
 version = "0.1.0"
+
 edition = "2021"
+
+authors = ["Azakidev <zazaguichi@outlook.com>"]
+repository = "https://github.com/Azakiradev/matrizal"
+readme = "README.md"
+
+license = "GNU General Public License version 3"
+license-file = "LICENSE.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 rand = "*"
 matrix = "*"
+cargo-arch = "0.1.5"
+
+[package.metadata.arch]
+arch = ["x86_64"]
+makedepends = ["cargo"]
