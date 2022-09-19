@@ -108,7 +108,10 @@ pub fn multmatrix () {
     if n == j {
         
         if m == k && j == k {
-          for o in 0..m {
+    
+    //Multiplication
+
+        for o in 0..m {
             for p in 0..k {
                 let mut sum = 0;
                 for z in 0..m {
@@ -116,7 +119,7 @@ pub fn multmatrix () {
                 }
                 c.set((o,p),sum);
             }
-            }
+        }
 
             println!("Matrixes to sum (A*B)"); println!();
             printmatx(&a, m, n); println!(); printmatx(&b, j, k);

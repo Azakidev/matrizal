@@ -222,6 +222,35 @@ pub fn esc_mult_matx (mut matx:matrix::format::Compressed<i32>,m:usize,n:usize,k
     return (matx, m, n);
 }
 
+//Matrix multiplication
+
+pub fn mtmatx (a:matrix::format::Compressed<i32>,m:usize,n:usize,b:matrix::format::Compressed<i32>,j:usize,k:usize) -> (matrix::format::Compressed<i32>,usize,usize) {
+    //Make matrixes
+    let mut c = Compressed::zero((m,k));
+
+    //Check if it's possible and make result matrix
+    if n == j {
+        
+        if m == k && j == k {
+    
+    //Multiplication
+
+        for o in 0..m {
+            for p in 0..k {
+                let mut sum = 0;
+                for z in 0..m {
+                    sum = sum + a.get((o,z)) * b.get((z,p));
+                }
+                c.set((o,p),sum);
+            }
+        }
+
+            return (c,m,k);
+        } else {println!("Matrixes aren't square! (Current limitation)"); return (c,m,k)}
+    } else {
+        println!("These matrixes cannot be multiplied (A's colums do not match B's colums)"); return (c,m,k)
+    }
+}
 
 //Determinants
 

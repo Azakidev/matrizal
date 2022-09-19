@@ -23,3 +23,14 @@ Then run it in a terminal by entering `matrizal`.
 ### Windows
 
 Download the .exe file in the releases section and run it.
+
+## To do
+
+[ ] CLI
+[ ] Release 1
+[ ] Spanish translation (?)
+[ ] Non square matrix multiplication
+[ ] Release 2
+[ ] Any size determinant
+[ ] Inverse of a matrix, any size
+[ ] Matrix equation solutions via determinants
