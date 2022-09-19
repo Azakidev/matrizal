@@ -18,8 +18,6 @@ license-file = "LICENSE.md"
 [dependencies]
 rand = "*"
 matrix = "*"
-cargo-arch = "0.1.5"
-cargo-deb = "1.39.2"
 
 [package.metadata.arch]
 arch = ["x86_64"]
