@@ -26,11 +26,11 @@ Download the .exe file in the releases section and run it.
 
 ## To do
 
-[x] CLI
-[ ] Release 1
-[ ] Spanish translation (?)
-[ ] Non square matrix multiplication
-[ ] Release 2
-[ ] Any size determinant
-[ ] Inverse of a matrix, any size
-[ ] Matrix equation solutions via determinants
+- [x] CLI
+- [ ] Release 1
+- [ ] Spanish translation (?)
+- [ ] Non square matrix multiplication
+- [ ] Release 2
+- [ ] Any size determinant
+- [ ] Inverse of a matrix, any size
+- [ ] Matrix equation solutions via determinants
