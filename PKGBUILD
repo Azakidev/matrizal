@@ -1,9 +1,9 @@
-# Maintainer: Azakidev <zazaguichi@outlook.com>
+# Maintainer: Az <zazaguichi@outlook.com>
 pkgname=matrizal
 pkgver=0.1.0
 pkgrel=1
 pkgdesc="A matrix calculator cli to do my homework"
-url="https://github.com/Azakiradev/matrizal"
+url="https://github.com/Azakidev/matrizal"
 license=("GNU General Public License version 3")
 arch=("x86_64")
 makedepends=("cargo")
