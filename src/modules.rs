@@ -2,6 +2,42 @@ use std::io;
 use rand::{self, thread_rng, Rng};
 use matrix::{*, prelude::Compressed};
 
+//Requests a size
+
+pub fn sizeq() -> (usize, usize){
+
+    //  Query
+
+    let mut row = String::new();
+    let mut col = String::new();
+
+    println!("Please choose the height of the matrix");
+
+        io::stdin()
+        .read_line(&mut row)
+        .expect("Failed to read line");
+    
+    println!("Please choose the width of the matrix");
+        
+        io::stdin()
+        .read_line(&mut col)
+        .expect("Failed to read line");
+
+    //  Conversion
+
+    let row = match row.trim().parse() {
+        Ok(n) => n,
+        Err(_) => 2,
+    };
+
+    let col = match col.trim().parse() {
+        Ok(n) => n,
+        Err(_) => 2,
+    };
+
+    return (row,col)
+}
+
 //Makes a new matrix
 
 pub fn newmatx() -> (matrix::format::Compressed<i32>,usize,usize) {
@@ -86,43 +122,6 @@ pub fn rngmatrix(mut matx:matrix::format::Compressed<i32>,m:usize,n:usize) -> ma
     return matx
 }
 
-//Requests a size
-
-pub fn sizeq() -> (usize, usize){
-
-    //  Query
-
-    let mut row = String::new();
-    let mut col = String::new();
-
-    println!("Please choose the height of the matrix");
-
-        io::stdin()
-        .read_line(&mut row)
-        .expect("Failed to read line");
-    
-    println!("Please choose the width of the matrix");
-        
-        io::stdin()
-        .read_line(&mut col)
-        .expect("Failed to read line");
-
-    //  Conversion
-
-    let row = match row.trim().parse() {
-        Ok(n) => n,
-        Err(_) => 2,
-    };
-
-    let col = match col.trim().parse() {
-        Ok(n) => n,
-        Err(_) => 2,
-    };
-
-    return (row,col)
-}
-
-
 //Prints matrix
 
 pub fn printmatx(matx:&matrix::format::Compressed<i32>,m:usize,n:usize) {
@@ -195,7 +194,7 @@ pub fn idmatx (s:usize) -> (matrix::format::Compressed<i32>,usize,usize) {
 
 }
 
-//Escalate specific matrix, just in case
+//Escalate specific matrix
 
 pub fn esc_mult_matx (mut matx:matrix::format::Compressed<i32>,m:usize,n:usize,k:i32) -> (matrix::format::Compressed<i32>,usize,usize) {
 

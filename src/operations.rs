@@ -55,23 +55,6 @@ pub fn matxsub () {
     printmatx(&c, m, n)
 }
 
-//Opposite of a matrix
-
-pub fn oppmatrix(mut matx:matrix::format::Compressed<i32>,row:usize,col:usize) -> matrix::format::Compressed<i32> {
-    let m = row;
-    let n = col;
-
-    for a in 0..m {
-        
-        for i in 0..n {
-
-            matx.set((a,i), matx.get((a,i)) * -1);
-        }
-        
-    } 
-    return matx
-}
-
 //Matrix multiplied by escalar
 
 pub fn escmatrix () {
@@ -156,4 +139,21 @@ pub fn randomatrix() {
     let matx = Compressed::zero((m,n));
     let matx = rngmatrix(matx, m, n);
     printmatx(&matx, m, n);
+}
+
+//Opposite of a matrix
+
+pub fn oppmatrix(mut matx:matrix::format::Compressed<i32>,row:usize,col:usize) -> matrix::format::Compressed<i32> {
+    let m = row;
+    let n = col;
+
+    for a in 0..m {
+        
+        for i in 0..n {
+
+            matx.set((a,i), matx.get((a,i)) * -1);
+        }
+        
+    } 
+    return matx
 }
