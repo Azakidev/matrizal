@@ -238,6 +238,27 @@ pub fn mtmatx (a:matrix::format::Compressed<i32>,m:usize,n:usize,b:matrix::forma
     }
 }
 
+//Addition
+pub fn addmatx (a:matrix::format::Compressed<i32>,m:usize,n:usize,b:matrix::format::Compressed<i32>,j:usize,k:usize) -> matrix::format::Compressed<i32> {
+    let mut c = Compressed::zero((m,n));
+
+    if m == j && n == k {
+
+        for r in 0..m {
+            
+            for x in 0..n {
+
+                c.set((r,x), a.get((r,x)) + b.get((r,x)));
+
+            }
+        } 
+
+    } else {
+        println!("The matrixes don't match! Returning 0mxn");
+    }
+    return c;
+}
+
 //Determinants
 
 pub fn detcalc (matx:&matrix::format::Compressed<i32>,s:usize) -> i32 {
