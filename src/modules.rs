@@ -210,7 +210,7 @@ pub fn esc_mult_matx (mut matx:matrix::format::Compressed<i32>,m:usize,n:usize,k
 
 //Matrix multiplication
 #[allow(dead_code)]
-pub fn mtmatx (a:matrix::format::Compressed<i32>,m:usize,n:usize,b:matrix::format::Compressed<i32>,j:usize,k:usize) -> (matrix::format::Compressed<i32>,usize,usize) {
+pub fn mtmatx (a:&matrix::format::Compressed<i32>,m:usize,n:usize,b:&matrix::format::Compressed<i32>,j:usize,k:usize) -> (matrix::format::Compressed<i32>,usize,usize) {
     //Make matrixes
     let mut c = Compressed::zero((m,k));
 

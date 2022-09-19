@@ -4,7 +4,7 @@ use crate::modules::*;
 
 //Sum of matrixes
 
-pub fn matxsum ()  {
+pub fn summatrix ()  {
     
     let (a,m,n) = newmatx();
     let (b,j,k) = newmatx();
@@ -15,7 +15,7 @@ pub fn matxsum ()  {
 
 //Substraction of matrixes
 
-pub fn matxsub () {
+pub fn submatrix () {
 
     let (a,m,n) = newmatx();
     let (b,j,k) = newmatx();
@@ -82,6 +82,15 @@ pub fn multmatrix () {
     } else {
         println!("These matrixes cannot be multiplied (A's colums do not match B's colums)")
     }
+}
+
+//Square a matrix
+
+pub fn sqmatrix () {
+    let (a,m,n) = newmatx();
+    let (c,m,n) = mtmatx(&a, m, n, &a, m, n);
+
+    printmatx(&c, m, n);
 }
 
 //Determinant calculation
