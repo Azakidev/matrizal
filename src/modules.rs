@@ -1,5 +1,4 @@
 use std::io;
-
 use rand::{self, thread_rng, Rng};
 use matrix::{*, prelude::Compressed};
 
@@ -42,12 +41,9 @@ pub fn newmatx() -> (matrix::format::Compressed<i32>,usize,usize) {
 
 //Generates specific matrix
 
-pub fn spmatrix (mut matx:matrix::format::Compressed<i32>, row:usize, col:usize) -> matrix::format::Compressed<i32> {
+pub fn spmatrix (mut matx:matrix::format::Compressed<i32>, m:usize, n:usize) -> matrix::format::Compressed<i32> {
 
     println!("Type each value individually, filling each row progressively from left to right");
-
-    let m = row;
-    let n = col;
 
     for a in 0..m {
 
@@ -75,10 +71,7 @@ pub fn spmatrix (mut matx:matrix::format::Compressed<i32>, row:usize, col:usize)
 
 //Generates a random matrix of a specific order
 
-pub fn rngmatrix(mut matx:matrix::format::Compressed<i32>,row:usize,col:usize) -> matrix::format::Compressed<i32> {
-
-    let m = row;
-    let n = col;
+pub fn rngmatrix(mut matx:matrix::format::Compressed<i32>,m:usize,n:usize) -> matrix::format::Compressed<i32> {
 
     for a in 0..m {
         
@@ -132,9 +125,7 @@ pub fn sizeq() -> (usize, usize){
 
 //Prints matrix
 
-pub fn printmatx(matx:&matrix::format::Compressed<i32>,row:usize,col:usize) {
-    let m = row;
-    let n = col;
+pub fn printmatx(matx:&matrix::format::Compressed<i32>,m:usize,n:usize) {
 
     for a in 0..m {
         print!("( ");
@@ -150,9 +141,7 @@ pub fn printmatx(matx:&matrix::format::Compressed<i32>,row:usize,col:usize) {
 
 //Prints determinant
 
-pub fn printdet(matx:&matrix::format::Compressed<i32>,row:usize,col:usize,det:i32) {
-    let m = row;
-    let n = col;
+pub fn printdet(matx:&matrix::format::Compressed<i32>,m:usize,n:usize,det:i32) {
 
     for a in 0..m {
         print!("| ");
@@ -169,10 +158,8 @@ pub fn printdet(matx:&matrix::format::Compressed<i32>,row:usize,col:usize,det:i3
 
 //Transpose a matrix
 
-pub fn transmatx (matx:matrix::format::Compressed<i32>,row:usize,col:usize) -> (matrix::format::Compressed<i32>,usize,usize) {
+pub fn transmatx (matx:matrix::format::Compressed<i32>,m:usize,n:usize) -> (matrix::format::Compressed<i32>,usize,usize) {
 
-    let m = col;
-    let n = row;
     let mut matx_t = Compressed::zero((m,m));
 
     for a in 0..m {
@@ -187,7 +174,7 @@ pub fn transmatx (matx:matrix::format::Compressed<i32>,row:usize,col:usize) -> (
 }
 
 //Creates identity matrix
-
+#[allow(dead_code)]
 pub fn idmatx (s:usize) -> (matrix::format::Compressed<i32>,usize,usize) {
 
     let m = s;
@@ -223,7 +210,7 @@ pub fn esc_mult_matx (mut matx:matrix::format::Compressed<i32>,m:usize,n:usize,k
 }
 
 //Matrix multiplication
-
+#[allow(dead_code)]
 pub fn mtmatx (a:matrix::format::Compressed<i32>,m:usize,n:usize,b:matrix::format::Compressed<i32>,j:usize,k:usize) -> (matrix::format::Compressed<i32>,usize,usize) {
     //Make matrixes
     let mut c = Compressed::zero((m,k));

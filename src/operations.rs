@@ -1,8 +1,8 @@
 use std::io;
-
 use matrix::prelude::*;
-
 use crate::modules::*;
+
+//Sum of matrixes
 
 pub fn matxsum ()  {
     
@@ -27,6 +27,8 @@ pub fn matxsum ()  {
 
     printmatx(&c, m, n)
 }
+
+//Substraction of matrixes
 
 pub fn matxsub () {
 
@@ -95,7 +97,6 @@ pub fn escmatrix () {
     printmatx(&matx, m, n);
 }
 
-
 //Matrix multiplication
 
 pub fn multmatrix () {
@@ -138,4 +139,21 @@ pub fn determatrix () {
 
     let d = detcalc(&a, s);
     printdet(&a, s, m, d)
+}
+
+//Transpose a matrix
+
+pub fn transmatrix() {
+    let (matx,m,n) = newmatx();
+    let (matx,m,n) = transmatx(matx, m, n);
+    printmatx(&matx, m, n);
+}
+
+//Random matrix
+
+pub fn randomatrix() {
+    let (m,n) = sizeq();
+    let matx = Compressed::zero((m,n));
+    let matx = rngmatrix(matx, m, n);
+    printmatx(&matx, m, n);
 }
