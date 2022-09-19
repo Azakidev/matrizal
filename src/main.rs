@@ -23,9 +23,11 @@ Please choose one of the following operations to perform
 
 Please input what you want to do");
 
-        let mut i = String::new();
+    let mut i = String::new();
 
-        std::io::stdin()
+    //Query
+    
+    std::io::stdin()
         .read_line(&mut i)
         .expect("Failed to read line");
 
@@ -36,10 +38,6 @@ Please input what you want to do");
         Err(_) => 0,
     };
 
-        choice(i);
-}
-
-pub fn choice (i:i32) {
     match i {
         1 => {matxsum()},
         2 => {matxsub()},
