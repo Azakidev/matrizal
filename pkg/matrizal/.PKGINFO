@@ -2,12 +2,12 @@
 # using fakeroot version 1.29
 pkgname = matrizal
 pkgbase = matrizal
-pkgver = 0.1.0-1
+pkgver = Release.1.r5.g22faedd-1
 pkgdesc = A matrix calculator cli to do my homework
 url = https://github.com/Azakidev/matrizal
-builddate = 1663599810
+builddate = 1663602378
 packager = Unknown Packager
-size = 366920
+size = 371016
 arch = x86_64
 license = GNU General Public License version 3
 makedepend = cargo

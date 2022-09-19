@@ -1,11 +1,11 @@
 format = 2
 pkgname = matrizal
 pkgbase = matrizal
-pkgver = 0.1.0-1
+pkgver = Release.1.r5.g22faedd-1
 pkgarch = x86_64
-pkgbuild_sha256sum = dedbf422e35b56cb0c9a2b9fb4161a05fe6b9dee978a24dfea9d6b959cd41fd0
+pkgbuild_sha256sum = a50eb1f3fe41f3699f2e93f395c51d6b77cd37bded745b5358562dd5dfaded25
 packager = Unknown Packager
-builddate = 1663599810
+builddate = 1663602378
 builddir = /home/zazag/Documents/Programming/matrizal
 startdir = /home/zazag/Documents/Programming/matrizal
 buildtool = makepkg

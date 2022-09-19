@@ -1,6 +1,6 @@
 # Maintainer: Az <zazaguichi@outlook.com>
 pkgname=matrizal
-pkgver=0.1.0
+pkgver=Release.1.r5.g22faedd
 pkgrel=1
 pkgdesc="A matrix calculator cli to do my homework"
 url="https://github.com/Azakidev/matrizal"
