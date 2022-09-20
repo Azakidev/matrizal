@@ -55,7 +55,6 @@ pub fn multmatrix () {
     //Make matrixes
     let (a,m,n) = newmatx();
     let (b,j,k) = newmatx();
-    let mut c = Compressed::zero((m,k));
 
     //Check if it's possible and make result matrix
     if n == j {
@@ -64,17 +63,9 @@ pub fn multmatrix () {
     
     //Multiplication
 
-        for o in 0..m {
-            for p in 0..k {
-                let mut sum = 0;
-                for z in 0..m {
-                    sum = sum + a.get((o,z)) * b.get((z,p));
-                }
-                c.set((o,p),sum);
-            }
-        }
+        let (c,m,k) = mtmatx(&a, m, n, &b, j, k);
 
-            println!("Matrixes to sum (A*B)"); println!();
+            println!("Matrixes to multiply (A*B)"); println!();
             printmatx(&a, m, n); println!(); printmatx(&b, j, k);
             println!(); println!("C = A*B ="); println!();
             printmatx(&c, m, k);
