@@ -30,6 +30,7 @@ Download the .exe file in the releases section and run it.
 - [x] Release 1
 - [ ] Spanish translation (?)
 - [x] Non square matrix multiplication
+- [ ] Linear combination of matrixes
 - [ ] Release 2
 - [ ] Any size determinant
 - [ ] Inverse of a matrix, any size
