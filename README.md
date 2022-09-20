@@ -29,7 +29,7 @@ Download the .exe file in the releases section and run it.
 - [x] CLI
 - [x] Release 1
 - [ ] Spanish translation (?)
-- [ ] Non square matrix multiplication
+- [x] Non square matrix multiplication
 - [ ] Release 2
 - [ ] Any size determinant
 - [ ] Inverse of a matrix, any size

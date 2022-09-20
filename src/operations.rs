@@ -58,8 +58,6 @@ pub fn multmatrix () {
 
     //Check if it's possible and make result matrix
     if n == j {
-        
-        if m == k && j == k {
     
     //Multiplication
 
@@ -69,8 +67,7 @@ pub fn multmatrix () {
             printmatx(&a, m, n); println!(); printmatx(&b, j, k);
             println!(); println!("C = A*B ="); println!();
             printmatx(&c, m, k);
-        } else {println!("Matrixes aren't square! (Current limitation)")}
-    } else {
+        } else {
         println!("These matrixes cannot be multiplied (A's colums do not match B's colums)")
     }
 }

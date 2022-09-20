@@ -216,8 +216,6 @@ pub fn mtmatx (a:&matrix::format::Compressed<i32>,m:usize,n:usize,b:&matrix::for
 
     //Check if it's possible and make result matrix
     if n == j {
-        
-        if m == k && j == k {
     
     //Multiplication
 
@@ -232,8 +230,7 @@ pub fn mtmatx (a:&matrix::format::Compressed<i32>,m:usize,n:usize,b:&matrix::for
         }
 
             return (c,m,k);
-        } else {println!("Matrixes aren't square! (Current limitation)"); return (c,m,k)}
-    } else {
+        } else {
         println!("These matrixes cannot be multiplied (A's colums do not match B's colums)"); return (c,m,k)
     }
 }
