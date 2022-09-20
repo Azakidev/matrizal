@@ -26,8 +26,6 @@ Download the .exe file in the releases section and run it.
 
 ## To do
 
-- [x] CLI
-- [x] Release 1
 - [ ] Spanish translation (?)
 - [x] Non square matrix multiplication
 - [ ] Linear combination of matrixes
