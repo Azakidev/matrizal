@@ -14,8 +14,8 @@ Please choose one of the following operations to perform
     2 - Subtract 2 matrixes.
         
     3 - Multiply a matrix by an escalar.
-    4 - Multiply 2 matrixes together. (Square matrixes only)
-    5 - Square a matrix (square only)
+    4 - Multiply 2 matrixes together.
+    5 - 'Square' a matrix (square matrixes only)
 
     6 - Calculate the determinant of a matrix. (Order 2 or 3)
         
