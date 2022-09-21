@@ -5,8 +5,10 @@ use crate::modules::*;
 //Sum of matrixes
 
 pub fn summatrix ()  {
-    
+
+    println!("Matrix A");
     let (a,m,n) = newmatx();
+    println!();println!("Matrix B");
     let (b,j,k) = newmatx();
     let c = addmatx(a, m, n, b, j, k);
 
@@ -17,8 +19,11 @@ pub fn summatrix ()  {
 
 pub fn submatrix () {
 
+    println!("Matrix A");
     let (a,m,n) = newmatx();
+    println!();println!("Matrix B");
     let (b,j,k) = newmatx();
+
     let b = oppmatrix(b, j, k);
     let c = addmatx(a, m, n, b, j, k);
     printmatx(&c, m, n)
@@ -27,6 +32,7 @@ pub fn submatrix () {
 //Matrix multiplied by escalar
 
 pub fn escmatrix () {
+    
     let (matx,m,n) = newmatx();                             //Declaration
 
 
@@ -52,8 +58,11 @@ pub fn escmatrix () {
 //Matrix multiplication
 
 pub fn multmatrix () {
+   
     //Make matrixes
+    println!("Matrix A");
     let (a,m,n) = newmatx();
+    println!();println!("Matrix B");
     let (b,j,k) = newmatx();
 
     //Check if it's possible and make result matrix
@@ -63,7 +72,7 @@ pub fn multmatrix () {
 
         let (c,m,k) = mtmatx(&a, m, n, &b, j, k);
 
-            println!("Matrixes to multiply (A*B)"); println!();
+            println!();println!("Matrixes to multiply (A*B)"); println!();
             printmatx(&a, m, n); println!(); printmatx(&b, j, k);
             println!(); println!("C = A*B ="); println!();
             printmatx(&c, m, k);
@@ -84,6 +93,7 @@ pub fn sqmatrix () {
 //Determinant calculation
 
 pub fn determatrix () {
+    
     let (a,s,m) = newmatx();
 
     let d = detcalc(&a, s);
@@ -93,6 +103,7 @@ pub fn determatrix () {
 //Transpose a matrix
 
 pub fn transmatrix() {
+
     let (matx,m,n) = newmatx();
     let (matx,m,n) = transmatx(matx, m, n);
     printmatx(&matx, m, n);
@@ -101,6 +112,7 @@ pub fn transmatrix() {
 //Random matrix
 
 pub fn randomatrix() {
+
     let (m,n) = sizeq();
     let matx = Compressed::zero((m,n));
     let matx = rngmatrix(matx, m, n);
@@ -109,17 +121,9 @@ pub fn randomatrix() {
 
 //Opposite of a matrix
 
-pub fn oppmatrix(mut matx:matrix::format::Compressed<i32>,row:usize,col:usize) -> matrix::format::Compressed<i32> {
-    let m = row;
-    let n = col;
+pub fn oppmatrix(matx:matrix::format::Compressed<i32>,m:usize,n:usize) -> matrix::format::Compressed<i32> {
 
-    for a in 0..m {
+    let (matx,_m,_n) = esc_mult_matx(matx, m, n, -1);
         
-        for i in 0..n {
-
-            matx.set((a,i), matx.get((a,i)) * -1);
-        }
-        
-    } 
     return matx
 }

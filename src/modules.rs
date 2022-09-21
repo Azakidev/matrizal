@@ -6,6 +6,8 @@ use matrix::{*, prelude::Compressed};
 
 pub fn sizeq() -> (usize, usize){
 
+    println!();
+    
     //  Query
 
     let mut row = String::new();
@@ -41,7 +43,7 @@ pub fn sizeq() -> (usize, usize){
 //Makes a new matrix
 
 pub fn newmatx() -> (matrix::format::Compressed<i32>,usize,usize) {
-
+    
     //Query the size of the matrix
     let (row,col) = sizeq();
     let matx = Compressed::zero((row,col));
