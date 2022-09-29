@@ -12,15 +12,16 @@ Please choose one of the following operations to perform
 
     1 - Sum 2 matrixes.
     2 - Subtract 2 matrixes.
+    3 - Linearly combine 2 matrixes
         
-    3 - Multiply a matrix by an escalar.
-    4 - Multiply 2 matrixes together.
-    5 - 'Square' a matrix (square matrixes only)
+    4 - Multiply a matrix by an escalar.
+    5 - Multiply 2 matrixes together.
+    6 - 'Square' a matrix (square matrixes only)
 
-    6 - Calculate the determinant of a matrix. (Order 2 or 3)
+    7 - Calculate the determinant of a matrix. (Order 2 or 3)
         
-    7 - Transpose a matrix.
-    8 - Generate a random matrix.
+    8 - Transpose a matrix.
+    9 - Generate a random matrix.
 
 Please input what you want to do");
 
@@ -42,12 +43,13 @@ Please input what you want to do");
     match i {
         1 => {summatrix()},
         2 => {submatrix()},
-        3 => {escmatrix()},
-        4 => {multmatrix()},
-        5 => {sqmatrix()},
-        6 => {determatrix()},
-        7 => {transmatrix()},
-        8 => {randomatrix()},
+        3 => {lc-matrix()},
+        4 => {escmatrix()},
+        5 => {multmatrix()},
+        6 => {sqmatrix()},
+        7 => {determatrix()},
+        8 => {transmatrix()},
+        9 => {randomatrix()},
         _ => {println!("Not a valid choice")},
     };
 }

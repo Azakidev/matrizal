@@ -29,6 +29,59 @@ pub fn submatrix () {
     printmatx(&c, m, n)
 }
 
+// Linear combination of matrixes
+
+pub fn lc-matrix () {
+
+    let (mut a,m,n) = newmatx();
+    let (mut b,j,k) = newmatx();
+
+    let c1 = m+n;
+    let c2 = j+k
+    
+    if c1 == c2 {
+    
+        let mut x = String::new();
+        let mut y = String::new()
+
+        println!("Choose x in x*A + y*B");                             //Query
+
+            io::stdin()
+            .read_line(&mut x)
+            .expect("Failed to read line");
+
+        let x = match x.trim().parse() {
+            Ok(x) => x,
+            Err(_) => {println!("Incorrect input, using 1");1},
+        };
+
+        println!("Choose y in x*A + y*B");                             //Query
+
+        io::stdin()
+        .read_line(&mut y)
+        .expect("Failed to read line");
+
+        let y = match y.trim().parse() {
+            Ok(y) => y,
+            Err(_) => {println!("Incorrect input, using 1");1},
+        };
+
+        let mut c = Compressed::zero((m,n));
+
+        //Calculation
+
+        let a = esc_mult_matx(a,m,n,x);
+        let b = esc_mult_matx(a,j,k,y);
+
+        let c = addmatx(a,m,n,b,j,k);
+
+        // Printing  
+
+        println!("{} * A + {} * B =",x,y); println();
+        printmatx(c,m,n);
+    
+   } else {println!("Sizes don't match!");}
+
 //Matrix multiplied by escalar
 
 pub fn escmatrix () {
