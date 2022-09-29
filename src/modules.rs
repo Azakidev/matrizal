@@ -274,7 +274,7 @@ pub fn detcalc (matx:&matrix::format::Compressed<i32>,s:usize) -> i32 {
     match s {
         2 => return matx.get((0,0))*matx.get((1,1))- matx.get((0,1))*matx.get((1,0)),
         
-        3 => return matx.get((0,0))*matx.get((1,1))*matx.get((2,2))
+        3 => return  matx.get((0,0))*matx.get((1,1))*matx.get((2,2))
                     +matx.get((0,1))*matx.get((1,2))*matx.get((2,0))
                     +matx.get((0,2))*matx.get((1,0))*matx.get((2,1))
                     -matx.get((0,2))*matx.get((1,1))*matx.get((2,0))
