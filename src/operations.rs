@@ -6,7 +6,7 @@ use crate::modules::*;
 
 pub fn summatrix ()  {
 
-    println!("Matrix A");
+    println!();println!("Matrix A");
     let (a,m,n) = newmatx();
     println!();println!("Matrix B");
     let (b,j,k) = newmatx();
@@ -19,7 +19,7 @@ pub fn summatrix ()  {
 
 pub fn submatrix () {
 
-    println!("Matrix A");
+    println!();println!("Matrix A");
     let (a,m,n) = newmatx();
     println!();println!("Matrix B");
     let (b,j,k) = newmatx();
@@ -31,18 +31,17 @@ pub fn submatrix () {
 
 // Linear combination of matrixes
 
-pub fn lc-matrix () {
+pub fn lcmatrix () {
 
-    let (mut a,m,n) = newmatx();
-    let (mut b,j,k) = newmatx();
-
-    let c1 = m+n;
-    let c2 = j+k
+    println!();println!("Matrix A");
+    let (a,m,n) = newmatx();
+    println!();println!("Matrix B");
+    let (b,j,k) = newmatx();
     
-    if c1 == c2 {
+    if m+n == j+k {
     
         let mut x = String::new();
-        let mut y = String::new()
+        let mut y = String::new();
 
         println!("Choose x in x*A + y*B");                             //Query
 
@@ -66,21 +65,20 @@ pub fn lc-matrix () {
             Err(_) => {println!("Incorrect input, using 1");1},
         };
 
-        let mut c = Compressed::zero((m,n));
-
         //Calculation
 
-        let a = esc_mult_matx(a,m,n,x);
-        let b = esc_mult_matx(a,j,k,y);
+        let (a,m,n) = escmatx(a,m,n,x);
+        let (b,j,k) = escmatx(b,j,k,y);
 
         let c = addmatx(a,m,n,b,j,k);
 
         // Printing  
 
-        println!("{} * A + {} * B =",x,y); println();
-        printmatx(c,m,n);
+        println!("{} * A + {} * B =",x,y); println!();
+        printmatx(&c,m,n);
     
-   } else {println!("Sizes don't match!");}
+   } else {println!("Sizes don't match!");};
+}
 
 //Matrix multiplied by escalar
 
@@ -103,7 +101,7 @@ pub fn escmatrix () {
     };
     
 
-    let (matx, m, n) = esc_mult_matx(matx, m, n, k);          //Operation
+    let (matx, m, n) = escmatx(matx, m, n, k);          //Operation
 
     printmatx(&matx, m, n);
 }
@@ -113,7 +111,7 @@ pub fn escmatrix () {
 pub fn multmatrix () {
    
     //Make matrixes
-    println!("Matrix A");
+    println!();println!("Matrix A");
     let (a,m,n) = newmatx();
     println!();println!("Matrix B");
     let (b,j,k) = newmatx();

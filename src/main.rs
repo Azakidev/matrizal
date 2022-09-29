@@ -43,7 +43,7 @@ Please input what you want to do");
     match i {
         1 => {summatrix()},
         2 => {submatrix()},
-        3 => {lc-matrix()},
+        3 => {lcmatrix()},
         4 => {escmatrix()},
         5 => {multmatrix()},
         6 => {sqmatrix()},

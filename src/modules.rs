@@ -198,7 +198,7 @@ pub fn idmatx (s:usize) -> (matrix::format::Compressed<i32>,usize,usize) {
 
 //Escalate specific matrix
 
-pub fn esc_mult_matx (mut matx:matrix::format::Compressed<i32>,m:usize,n:usize,k:i32) -> (matrix::format::Compressed<i32>,usize,usize) {
+pub fn escmatx (mut matx:matrix::format::Compressed<i32>,m:usize,n:usize,k:i32) -> (matrix::format::Compressed<i32>,usize,usize) {
 
     for a in 0..m {
         
@@ -211,7 +211,7 @@ pub fn esc_mult_matx (mut matx:matrix::format::Compressed<i32>,m:usize,n:usize,k
 }
 
 //Matrix multiplication
-#[allow(dead_code)]
+
 pub fn mtmatx (a:&matrix::format::Compressed<i32>,m:usize,n:usize,b:&matrix::format::Compressed<i32>,j:usize,k:usize) -> (matrix::format::Compressed<i32>,usize,usize) {
     //Make matrixes
     let mut c = Compressed::zero((m,k));
@@ -262,7 +262,7 @@ pub fn addmatx (a:matrix::format::Compressed<i32>,m:usize,n:usize,b:matrix::form
 
 pub fn oppmatrix(matx:matrix::format::Compressed<i32>,m:usize,n:usize) -> matrix::format::Compressed<i32> {
 
-    let (matx,_m,_n) = esc_mult_matx(matx, m, n, -1);
+    let (matx,_m,_n) = escmatx(matx, m, n, -1);
         
     return matx
 }
