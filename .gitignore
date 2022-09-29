@@ -1,3 +1,4 @@
 /target
-archpkg.sh
+/release
+buildscript.sh
 *.tar.gz
