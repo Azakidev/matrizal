@@ -29,7 +29,7 @@ Download the .exe file in the releases section and run it.
 - [ ] Spanish translation (?)
 - [x] Non square matrix multiplication
 - [ ] Windows Terminal hold when done
-- [x] Linear combination of matrixes (Check if it works)
+- [x] Linear combination of matrixes
 - [ ] Release 2
 - [ ] Any size determinant
 - [ ] Inverse of a matrix, any size
