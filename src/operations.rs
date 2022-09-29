@@ -65,6 +65,12 @@ pub fn lcmatrix () {
             Err(_) => {println!("Incorrect input, using 1");1},
         };
 
+        
+        //Print og matrixes
+
+        println!();println!("Your matrixes are:");println!("A = "); printmatx(&a, m, n);
+        println!();println!("B = "); printmatx(&b, m, n);println!();
+        
         //Calculation
 
         let (a,m,n) = escmatx(a,m,n,x);
