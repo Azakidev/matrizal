@@ -171,12 +171,3 @@ pub fn randomatrix() {
     let matx = rngmatrix(matx, m, n);
     printmatx(&matx, m, n);
 }
-
-//Opposite of a matrix
-
-pub fn oppmatrix(matx:matrix::format::Compressed<i32>,m:usize,n:usize) -> matrix::format::Compressed<i32> {
-
-    let (matx,_m,_n) = esc_mult_matx(matx, m, n, -1);
-        
-    return matx
-}
