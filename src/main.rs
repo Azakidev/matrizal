@@ -16,7 +16,7 @@ Please choose one of the following operations to perform
         
     4 - Multiply a matrix by an escalar.
     5 - Multiply 2 matrixes together.
-    6 - 'Square' a matrix (square matrixes only)
+    6 - 'Square' a matrix.
 
     7 - Calculate the determinant of a matrix. (Order 2 or 3)
         
