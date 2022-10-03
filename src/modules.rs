@@ -1,6 +1,7 @@
-use std::io;
+use std::{io::{self, stdin}, env::consts::OS};
 use rand::{self, thread_rng, Rng};
 use matrix::{*, prelude::Compressed};
+use termion::input::TermRead;
 
 //Requests a size
 
@@ -138,6 +139,9 @@ pub fn printmatx(matx:&matrix::format::Compressed<i32>,m:usize,n:usize) {
         println!();
     } 
     println!();
+
+    let a = OS;
+    if a == "windows" {println!("Done, press enter to exit!");stdin().keys().next();}
 }
 
 //Prints determinant

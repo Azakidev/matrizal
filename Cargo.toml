@@ -17,6 +17,7 @@ license = "GPL-3.0-or-later"
 [dependencies]
 rand = "*"
 matrix = "*"
+termion = "*"
 
 [package.metadata.arch]
 arch = ["x86_64"]
