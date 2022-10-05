@@ -27,7 +27,7 @@ Download the .exe file in the releases section and run it.
 ## To do
 
 - [ ] Spanish translation (?)
-- [ ] Windows Terminal hold when done (?)
+- [x] Windows Terminal hold when done
 - [ ] Any size determinant
 - [ ] Inverse of a matrix, any size
 - [ ] Matrix equation solutions via determinants

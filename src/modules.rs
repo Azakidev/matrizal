@@ -140,8 +140,7 @@ pub fn printmatx(matx:&matrix::format::Compressed<i32>,m:usize,n:usize) {
     } 
     println!();
 
-    let a = OS;
-    if a == "windows" {println!("Done, press enter to exit!");stdin().keys().next();}
+    if OS == "windows" {println!("Press enter to exit. . .");stdin().keys().next();}
 }
 
 //Prints determinant
@@ -159,6 +158,8 @@ pub fn printdet(matx:&matrix::format::Compressed<i32>,m:usize,n:usize,det:i32) {
     } 
     println!();
     println!("The determinant is {}",det);
+    
+    if OS == "windows" {println!("Press enter to exit. . .");stdin().keys().next();}
 }
 
 //Transpose a matrix
