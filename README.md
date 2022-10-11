@@ -24,6 +24,16 @@ Then run it in a terminal by entering `matrizal`.
 
 Download the .exe file in the releases section and run it.
 
+### Android
+
+- Install termux from github
+
+- Run the following command in termux to download the binary (make sure curl is installed)
+
+```curl -L https://github.com/Azakidev/matrizal/releases/download/Release-2.0/android-termux-aarch64-binary --output matrizal```
+
+- Then simply type `./matrizal` to run
+
 ## To do
 
 - [ ] Spanish translation (?)
