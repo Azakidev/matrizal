@@ -32,7 +32,7 @@ Download the .exe file in the releases section and run it.
 
 ```curl -L https://github.com/Azakidev/matrizal/releases/download/Release-2.0/android-termux-aarch64-binary --output matrizal```
 
-- Then simply type `./matrizal` to run
+- Then simply type `./matrizal` to run it
 
 ## To do
 

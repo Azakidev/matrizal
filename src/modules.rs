@@ -158,7 +158,7 @@ pub fn printdet(matx:&matrix::format::Compressed<i32>,m:usize,n:usize,det:i32) {
     } 
     println!();
     println!("The determinant is {}",det);
-    
+
     if OS == "windows" {println!("Press enter to exit. . .");stdin().keys().next();}
 }
 
@@ -277,6 +277,7 @@ pub fn oppmatrix(matx:matrix::format::Compressed<i32>,m:usize,n:usize) -> matrix
 pub fn detcalc (matx:&matrix::format::Compressed<i32>,s:usize) -> i32 {
 
     match s {
+        1 => {println!("Not a matrix"); return 0},
         2 => return matx.get((0,0))*matx.get((1,1))- matx.get((0,1))*matx.get((1,0)),
         
         3 => return  matx.get((0,0))*matx.get((1,1))*matx.get((2,2))
@@ -286,6 +287,26 @@ pub fn detcalc (matx:&matrix::format::Compressed<i32>,s:usize) -> i32 {
                     -matx.get((0,0))*matx.get((1,2))*matx.get((2,1))
                     -matx.get((0,1))*matx.get((1,0))*matx.get((2,2))
                     ,
-        _ => {println!("Unsupported size!"); return 0;},
+        _ => /*return largedet(matx, s),*/ return 0,
     };
 }
+/*
+pub fn largedet ( matx:&matrix::format::Compressed<i32>, s:usize) -> i32 {
+
+    
+    
+    // Make minor
+
+    let mut c = Compressed::zero(s-1);
+
+    for a in 0..s-1 {
+        for b in 0..s-1 {
+            c.set((a,b),matx.get((a+1,b+1)));
+        }
+    }
+    
+    a
+
+
+}
+*/
