@@ -1,7 +1,7 @@
-use std::{io::{self, stdin}, env::consts::OS};
+use std::{io, env::consts::OS};
 use rand::{self, thread_rng, Rng};
 use matrix::{*, prelude::Compressed};
-use termion::input::TermRead;
+use crossterm::{self, event::{read, Event}};
 
 //Requests a size
 
@@ -140,7 +140,7 @@ pub fn printmatx(matx:&matrix::format::Compressed<i32>,m:usize,n:usize) {
     } 
     println!();
 
-    if OS == "windows" {println!("Press enter to exit. . .");stdin().keys().next();}
+    if OS == "windows" {println!("Press enter to exit. . ."); hold();}
 }
 
 //Prints determinant
@@ -159,7 +159,18 @@ pub fn printdet(matx:&matrix::format::Compressed<i32>,m:usize,n:usize,det:i32) {
     println!();
     println!("The determinant is {}",det);
 
-    if OS == "windows" {println!("Press enter to exit. . .");stdin().keys().next();}
+    if OS == "windows" {println!("Press enter to exit. . .");hold();}
+}
+
+//Hold on windows
+
+pub fn hold() {
+    loop {
+        match read() {
+            Ok(Event::Key(_event)) => break,
+            _ => continue,
+        }
+    }
 }
 
 //Transpose a matrix
