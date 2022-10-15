@@ -42,7 +42,7 @@ Please input what you want to do");
 
     let i = match i.trim().parse() {
         Ok(n) => n,
-        Err(_) => 0,
+        Err(_) => -1,
     };
 
     match i {
@@ -92,7 +92,7 @@ Please input what you want to do
 
     let i = match i.trim().parse() {
         Ok(n) => n,
-        Err(_) => 0,
+        Err(_) => -1,
     };
 
     match i {
@@ -103,4 +103,6 @@ Please input what you want to do
         4 => {benchrng()},
         _ => {println!("Not a valid choice")},
     };
+
+    println!();benchlist();
 }
